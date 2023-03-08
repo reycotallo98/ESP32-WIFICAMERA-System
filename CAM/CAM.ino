@@ -9,6 +9,11 @@
 #include "esp_http_server.h"
 #include "WiFi.h"
 
+
+//Developed by reycotallo98
+//https://github.com/reycotallo98
+
+
 //Replace with your network credentials
 const char* ssid = "WIFI SSID";
 const char* password = "PASSWORD";

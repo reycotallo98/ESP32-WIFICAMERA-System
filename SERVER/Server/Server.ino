@@ -1,5 +1,9 @@
 #include <WiFi.h>
 
+//Developed by reycotallo98
+//https://github.com/reycotallo98
+
+
 //------------------Servidor Web en puerto 80---------------------
 
 WiFiServer server(80);
@@ -13,9 +17,6 @@ const char* password = "PASSWORD";
 int contconexion = 0;
 
 String header; // Variable para guardar el HTTP request
-
-
-
 
 
 //------------------------CODIGO HTML------------------------------
