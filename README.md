@@ -4,7 +4,7 @@ This proyect contains two arduino proyects, which are programmed for 3 ESP-32, o
 
 ## Requeriments
 
-I used for my proyect this ESP-32 for the cameras, which cost 6€
+I used for my proyect this ESP-32 because it include a camera module, which cost 6€
 (ESP32Cam)[https://es.aliexpress.com/item/1005003232704043.html?spm=a2g0o.order_list.order_list_main.12.43fc194dxoKu33&gatewayAdapt=glo2esp]
 
 For the server you can use some ESP32 board wich need to have wifi like this, it cost around 3€:
