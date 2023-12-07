@@ -8,7 +8,7 @@ I used for my proyect this ESP-32 because it include a camera module, which cost
 (ESP32Cam)[https://es.aliexpress.com/item/1005003232704043.html?spm=a2g0o.order_list.order_list_main.12.43fc194dxoKu33&gatewayAdapt=glo2esp]
 
 For the server you can use some ESP32 board wich need to have wifi like this, it cost around 3€:
-(ESP32Server)[https://es.aliexpress.com/item/1005004879572949.html?spm=a2g0o.detail.1000014.6.64a4111cMFW5Tq&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=34d3b654-266d-4d7a-a376-415b3fe0a5a8&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:34d3b654-266d-4d7a-a376-415b3fe0a5a8,tpp_buckets:668%232846%238111%231996&pdp_ext_f=%7B%22sku_id%22%3A%2212000030924316155%22%2C%22sceneId%22%3A%2230050%22%7D&pdp_npi=3%40dis%21EUR%213.6%212.34%21%21%21%21%21%400b0a23a716780222693483418edd63%2112000030924316155%21rec%21ES%21744228666]
+[ESP32Server](https://es.aliexpress.com/item/1005004879572949.html?spm=a2g0o.detail.1000014.6.64a4111cMFW5Tq&gps-id=pcDetailBottomMoreOtherSeller&scm=1007.40050.281175.0&scm_id=1007.40050.281175.0&scm-url=1007.40050.281175.0&pvid=34d3b654-266d-4d7a-a376-415b3fe0a5a8&_t=gps-id:pcDetailBottomMoreOtherSeller,scm-url:1007.40050.281175.0,pvid:34d3b654-266d-4d7a-a376-415b3fe0a5a8,tpp_buckets:668%232846%238111%231996&pdp_ext_f=%7B%22sku_id%22%3A%2212000030924316155%22%2C%22sceneId%22%3A%2230050%22%7D&pdp_npi=3%40dis%21EUR%213.6%212.34%21%21%21%21%21%400b0a23a716780222693483418edd63%2112000030924316155%21rec%21ES%21744228666]
 
 ## Functionalities
 
