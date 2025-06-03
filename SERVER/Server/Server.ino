@@ -1,4 +1,5 @@
 #include <WiFi.h>
+#include <WebServer.h>
 
 //Developed by reycotallo98
 //https://github.com/reycotallo98
@@ -6,7 +7,7 @@
 
 //------------------Servidor Web en puerto 80---------------------
 
-WiFiServer server(80);
+WebServer server(80);
 
 //---------------------Credenciales de WiFi-----------------------
 
@@ -15,8 +16,6 @@ const char* password = "PASSWORD";
 
 //---------------------VARIABLES GLOBALES-------------------------
 int contconexion = 0;
-
-String header; // Variable para guardar el HTTP request
 
 
 //------------------------CODIGO HTML------------------------------
@@ -80,6 +79,10 @@ String pagina = "<!doctype html>"
 
 "</html>";
 
+void handleRoot(){
+  server.send(200, "text/html", pagina);
+}
+
 
 //---------------------------SETUP--------------------------------
 void setup() {
@@ -106,9 +109,10 @@ void setup() {
       Serial.println("");
       Serial.println("WiFi conectado");
       Serial.println(WiFi.localIP());
-      server.begin(); // iniciamos el servidor
+      server.on("/", handleRoot);
+      server.begin();
   }
-  else { 
+  else {
       Serial.println("");
       Serial.println("Error de conexion");
   }
@@ -117,46 +121,5 @@ void setup() {
 //----------------------------LOOP----------------------------------
 
 void loop(){
-  WiFiClient client = server.available();   // Escucha a los clientes entrantes
-
-  if (client) {                             // Si se conecta un nuevo cliente
-    Serial.println("New Client.");          // 
-    String currentLine = "";                //
-    while (client.connected()) {            // loop mientras el cliente está conectado
-      if (client.available()) {             // si hay bytes para leer desde el cliente
-        char c = client.read();             // lee un byte
-        Serial.write(c);                    // imprime ese byte en el monitor serial
-        header += c;
-        if (c == '\n') {                    // si el byte es un caracter de salto de linea
-          // si la nueva linea está en blanco significa que es el fin del 
-          // HTTP request del cliente, entonces respondemos:
-          if (currentLine.length() == 0) {
-            client.println("HTTP/1.1 200 OK");
-            client.println("Content-type:text/html");
-            client.println("Connection: close");
-            client.println();
-            
-
-            
-            // Muestra la página web
-            client.println(pagina);
-            
-            // la respuesta HTTP temina con una linea en blanco
-            client.println();
-            break;
-          } else { // si tenemos una nueva linea limpiamos currentLine
-            currentLine = "";
-          }
-        } else if (c != '\r') {  // si C es distinto al caracter de retorno de carro
-          currentLine += c;      // lo agrega al final de currentLine
-        }
-      }
-    }
-    // Limpiamos la variable header
-    header = "";
-    // Cerramos la conexión
-    client.stop();
-    Serial.println("Client disconnected.");
-    Serial.println("");
-  }
+  server.handleClient();
 }
