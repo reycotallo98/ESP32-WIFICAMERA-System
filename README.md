@@ -15,6 +15,7 @@ For the server you can use some ESP32 board wich need to have wifi like this, it
 - Server host index page, where allow us to see video record of cameras.
 - We can control flash light of the esp32 throught a button on index page.
 - It can grow, we can add more cameras, index page was programmed using bootstrap, which allow us to add more rows with more cams.
+- The web server was updated to handle multiple clients at the same time.
 
 ## Instalation
 
