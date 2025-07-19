@@ -20,65 +20,79 @@ String header; // Variable para guardar el HTTP request
 
 
 //------------------------CODIGO HTML------------------------------
-String pagina = "<!doctype html>"
-"<html lang='es'>"
-"<head>"
-    "<title>JorgeCams</title>" 
-    "<meta charset='utf-8'>"
-    "<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>"
-    "<meta http-equiv=”refresh” content='1'>"
-    "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>"
-"</head>"
-"<body class='bg-secondary'>"
-    "<div class='container bg-dark'>"
-        "<h1 class='text-white'>Bienvenido a JorgeCams</h1>"
-        "<div class='row'>"
-            "<div class='col-11 col-lg-6 col-md-8 col-sm-10 col-xs-11 row'><img class='col-11' src='http://192.168.0.110' >"
-                    "<div class='col-7 justify-content-center'>"
-                        "<input type='button' value='arriba'>"
-                        "<div class='row'>"
-                            "<input type='button' value='izquierda' onclick=''>"
-                            "<input type='button' value='derecha' onclick=''>"
-                        "</div>"
-                        "<input type='button' value='abajo' onclick=''>"
-                        "<div class='row'>"
-                            "<input type='button' value='On' onclick=''>"
-                            "<input type='button' value='flash' onclick='flash(110)'>"
-                        "</div>"
-                    "</div>"
-                "</div>"
-                "<div class='col-11 col-lg-6 col-md-8 col-sm-10 col-xs-11 row'><img class='col-11' src='http://192.168.0.74'>"
-                    "<div class='col-7 justify-content-center'>"
-                        "<input type='button' value='arriba'>"
-                        "<div class='row'>"
-                            "<input type='button' value='izquierda' onclick=''>"
-                            "<input type='button' value='derecha' onclick=''>"
-                        "</div>"
-                        "<input type='button' value='abajo' onclick=''>"
-                        "<div class='row'>"
-                            "<input type='button' value='On' onclick=''>"
-                            "<input type='button' value='flash' onclick='flash(74)'>"
-                        "</div>"
-                    "</div>"
-                "</div>"
-        "</div>"
-        "</div>"
-    "<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous'></script>"
-    "<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous'></script>"
-    "<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous'></script>"
-    "<script type='text/JavaScript'>"
-        "function flash(number) {\n"
-            "const url = 'http://192.168.0.'+number+'/flash'\n"
-            "const http = new XMLHttpRequest()\n"
-            "http.open('GET', url)\n"
-            "location.reload()\n" 
-        "http.send()\n"
-        "console.log('ll')}\n"
+String pagina = R"rawliteral(
+<!doctype html>
+<html lang='es'>
+<head>
+    <title>JorgeCams</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv='refresh' content='1'>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+</head>
+<body class='bg-secondary'>
+    <div class='container py-4'>
+        <h1 class='text-white text-center mb-4'>Bienvenido a JorgeCams</h1>
+        <div class='row'>
+            <div class='col-md-6 mb-4'>
+                <div class='card'>
+                    <img class='img-fluid' src='http://192.168.0.110'>
+                    <div class='card-body text-center'>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>arriba</button>
+                        </div>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>izquierda</button>
+                            <button class='btn btn-light'>derecha</button>
+                        </div>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>abajo</button>
+                        </div>
+                        <div class='btn-group'>
+                            <button class='btn btn-light'>On</button>
+                            <button class='btn btn-primary' onclick='flash(110)'>Flash</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-6 mb-4'>
+                <div class='card'>
+                    <img class='img-fluid' src='http://192.168.0.74'>
+                    <div class='card-body text-center'>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>arriba</button>
+                        </div>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>izquierda</button>
+                            <button class='btn btn-light'>derecha</button>
+                        </div>
+                        <div class='btn-group mb-2'>
+                            <button class='btn btn-light'>abajo</button>
+                        </div>
+                        <div class='btn-group'>
+                            <button class='btn btn-light'>On</button>
+                            <button class='btn btn-primary' onclick='flash(74)'>Flash</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function flash(number) {
+        const url = 'http://192.168.0.' + number + '/flash';
+        const http = new XMLHttpRequest();
+        http.open('GET', url);
+        http.send();
+    }
+    </script>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+</body>
 
-        "</script>"
-"</body>"
-
-"</html>";
+</html>
+)rawliteral";
 
 
 //---------------------------SETUP--------------------------------
