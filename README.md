@@ -27,10 +27,10 @@ For the server you can use some ESP32 board wich need to have wifi like this, it
  
  
  ## How its shows
- 
- After all, put on your browser 192.168.0.90 and you will see something like this
+
+ After all, put on your browser 192.168.0.90 and you will see a page with each camera inside a Bootstrap card.
  ![image](https://user-images.githubusercontent.com/93315382/222963910-5a0393dd-4467-4786-843d-007647e84a99.png)
- 
+
  You can flash the light, if you press the button flash.
  ![image](https://user-images.githubusercontent.com/93315382/222963941-c9604066-0be7-484f-a15d-4ef922bf8efe.png)
 
